@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titanic Survival Prediction</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <style>
+        .note {
+            font-style: italic;
+            color: #555;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Titanic Survival Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="Pclass">Pclass:</label>
+            <select id="Pclass" name="Pclass" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <div class="note">Pclass adalah kelas penumpang: 1 untuk First Class, 2 untuk Second Class, dan 3 untuk Third Class.</div>
+
+            <label for="Sex">Sex:</label>
+            <select id="Sex" name="Sex" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <div class="note">Sex adalah jenis kelamin penumpang: Male untuk laki-laki, Female untuk perempuan.</div>
+
+            <label for="SibSp">SibSp:</label>
+            <select id="SibSp" name="SibSp" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="8">8</option>
+            </select>
+            <div class="note">SibSp menunjukkan jumlah saudara kandung atau pasangan yang ikut bersama di Titanic.</div>
+
+            <label for="Parch">Parch:</label>
+            <select id="Parch" name="Parch" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+            <div class="note">Parch menunjukkan jumlah orang tua atau anak yang ikut bersama di Titanic.</div>
+
+            <label for="Fare">Fare:</label>
+            <input type="number" id="Fare" name="Fare" step="0.01" required>
+            <div class="note">Fare adalah biaya tiket yang dibayarkan oleh penumpang dalam satuan mata uang tertentu.</div>
+
+            <label for="Embarked">Embarked:</label>
+            <select id="Embarked" name="Embarked" required>
+                <option value="S">Southampton (S)</option>
+                <option value="C">Cherbourg (C)</option>
+                <option value="Q">Queenstown (Q)</option>
+            </select>
+            <div class="note">Embarked adalah pelabuhan keberangkatan: S untuk Southampton, C untuk Cherbourg, dan Q untuk Queenstown.</div>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
